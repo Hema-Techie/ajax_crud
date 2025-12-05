@@ -12,11 +12,11 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->integer('quantity');
-            $table->enum('status', ['active', 'inactive']); // radio button
-            $table->unsignedBigInteger('category_id'); // foreign key
+            $table->enum('status', ['active', 'inactive']);
+            $table->unsignedBigInteger('category_id');
+
             $table->timestamps();
 
-            // Foreign key constraint with cascade delete
             $table->foreign('category_id')
                   ->references('id')
                   ->on('categories')
